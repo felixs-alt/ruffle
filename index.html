@@ -1,8 +1,9 @@
 <body>
 <center><div id="container"></div></center>
+<center><button id="full">Enter Fullscreen</button></center>
 <script>
   window.RufflePlayer = window.RufflePlayer || {};
-  window.RufflePlayer.config = {"allowFullscreen": true}
+  window.RufflePlayer.config = {"allowFullscreen": true,"autoplay": true}
   window.addEventListener("load", (event) => {
       var swf = new URL(window.location.href).searchParams.get("swf")
       if(swf == null){
@@ -11,14 +12,11 @@
       }
       const ruffle = window.RufflePlayer.newest();
       const player = ruffle.createPlayer();
-      player.config = {
-      autoplay: "true",
-      };
       const container = document.getElementById("container");
       container.appendChild(player);
       player.load(swf);
       window.history.pushState("object or string", "Title", window.location.pathname)
-      player.enterFullscreen()
+      document.getElementById("full").onclick = function(){document.getElementById("container").enterFullscreen()};
   });
 </script>
 <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
