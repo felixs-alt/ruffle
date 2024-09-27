@@ -9,7 +9,7 @@
       const container = document.getElementById("container");
       container.appendChild(player);
       player.load(swf);
-      window.history.pushState("object or string", "Title", "/")
+      window.history.pushState("object or string", "Title", window.location.pathname)
   });
 </script>
 <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
