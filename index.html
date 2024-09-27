@@ -1,15 +1,20 @@
 <body>
-<div id="container"></div>
+<center><div id="container"></div></center>
 <script>
   window.RufflePlayer = window.RufflePlayer || {};
+  window.RufflePlayer.config = {"allowFullscreen": true;}
   window.addEventListener("load", (event) => {
       const swf = new URL(window.location.href).searchParams.get("swf")
       const ruffle = window.RufflePlayer.newest();
       const player = ruffle.createPlayer();
+      player.config = {
+      autoplay: "true",
+      };
       const container = document.getElementById("container");
       container.appendChild(player);
       player.load(swf);
       window.history.pushState("object or string", "Title", window.location.pathname)
+      player.enterFullscreen()
   });
 </script>
 <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
