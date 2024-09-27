@@ -4,7 +4,7 @@
   window.RufflePlayer = window.RufflePlayer || {};
   window.RufflePlayer.config = {"allowFullscreen": true}
   window.addEventListener("load", (event) => {
-      const swf = new URL(window.location.href).searchParams.get("swf")
+      var swf = new URL(window.location.href).searchParams.get("swf")
       if(swf == null){
         swf = localStorage.swf} else {
         localStorage.swf = swf
