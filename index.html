@@ -2,7 +2,7 @@
 <center><div id="container"></div></center>
 <script>
   window.RufflePlayer = window.RufflePlayer || {};
-  window.RufflePlayer.config = {"allowFullscreen": true,"autoplay": "on","quality": "best"}
+  window.RufflePlayer.config = {"allowFullscreen": true,"autoplay": "on","quality": "best","unmuteOverlay": "hidden"}
   window.addEventListener("load", (event) => {
       var swf = new URL(window.location.href).searchParams.get("swf")
       if(swf == null){
