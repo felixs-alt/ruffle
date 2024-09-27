@@ -3,11 +3,13 @@
 <script>
   window.RufflePlayer = window.RufflePlayer || {};
   window.addEventListener("load", (event) => {
+      const swf = new URL(window.location.href).searchParams.get("swf")
       const ruffle = window.RufflePlayer.newest();
       const player = ruffle.createPlayer();
       const container = document.getElementById("container");
       container.appendChild(player);
-      player.load("movie.swf");
+      player.load(swf);
+      window.history.pushState("object or string", "Title", "/"+window.location.href.split("?")[0]
   });
 </script>
 <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
