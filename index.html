@@ -12,6 +12,7 @@
       }
       const ruffle = window.RufflePlayer.newest();
       window.player = ruffle.createPlayer();
+      player.style.width = "100%"; player.style.height = "100%";
       const container = document.getElementById("container");
       container.appendChild(player);
       player.load(swf);
