@@ -5,6 +5,10 @@
   window.RufflePlayer.config = {"allowFullscreen": true;}
   window.addEventListener("load", (event) => {
       const swf = new URL(window.location.href).searchParams.get("swf")
+      if(swf == null){
+        swf = localStorage.swf} else {
+        localStorage.swf = swf
+      }
       const ruffle = window.RufflePlayer.newest();
       const player = ruffle.createPlayer();
       player.config = {
